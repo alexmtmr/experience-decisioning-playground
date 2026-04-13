@@ -1,0 +1,71 @@
+/* Google Fonts — serif, sans, and mono */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* CSS custom properties — used by all CSS Modules */
+:root {
+  --bg: #FAF9F7;
+  --surface: #FFFFFF;
+  --surface-alt: #F5F3EF;
+  --surface-warm: #FBF8F4;
+  --text: #1B1B1B;
+  --text-muted: #807872;
+  --accent: #EB1000;
+  --accent-soft: #FFF0EE;
+  --border: #E8E4DF;
+  --green: #2D9D78;
+  --blue: #2680EB;
+  --gold: #E68619;
+  --purple: #7C5CFC;
+  --preview-bg: #F9F6F1;
+  --preview-border: #EDE8E0;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'DM Mono', Consolas, monospace;
+}
+
+/* Global resets */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-sans);
+}
+
+/* Fade-in animation for step transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Range input styling */
+input[type="range"] {
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
