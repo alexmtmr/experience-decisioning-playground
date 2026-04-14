@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react';
-import { FONT_SERIF, FONT_SANS, FONT_MONO, T } from '../../theme';
-import { STEPS } from '../../data/steps';
+import { T } from '../../theme';
+import { CardExplorer } from './CardExplorer';
 import styles from './IntroStep.module.css';
 
-/* Step 0 — Welcome screen with the 3-box story and step badges */
+/* Step 0 — Welcome screen with the 3-box story, then interactive card explorer */
 export const IntroStep = () => (
   <div className={styles.wrapper}>
     <div className={styles.module}>A module of Adobe Journey Optimizer</div>
@@ -19,7 +19,7 @@ export const IntroStep = () => (
       {[
         { title: '10 offers compete', sub: 'for the same slot' },
         { title: 'The engine evaluates', sub: 'rules, ranking, context' },
-        { title: '1 personalized winner', sub: 'per customer, per visit' },
+        { title: '1 winner', sub: 'per customer, per visit' },
       ].map((box, i) => (
         <div key={i} className={styles.storyGroup}>
           {i > 0 && <ArrowRight size={18} color={T.tm} />}
@@ -31,16 +31,10 @@ export const IntroStep = () => (
       ))}
     </div>
 
-    <p className={styles.body}>
-      This interactive tutorial walks you through the full pipeline — from defining your offer schema to watching the engine rank offers differently for each customer. Everything is clickable. Explore at your own pace.
+    <p className={styles.bridgeText}>
+      But how does the engine actually decide? Explore the building blocks below — expand each layer and click the info icons to see how policies, strategies, and ranking methods work together.
     </p>
 
-    <div className={styles.badges}>
-      {STEPS.slice(1).map((s, i) => (
-        <span key={s.id} className={styles.badge}>
-          {String(i + 1).padStart(2, '0')} {s.short}
-        </span>
-      ))}
-    </div>
+    <CardExplorer />
   </div>
 );

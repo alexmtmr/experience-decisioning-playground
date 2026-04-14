@@ -38,6 +38,12 @@ body {
   to { opacity: 1; }
 }
 
+/* Card explorer detail panel slide-in */
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 /* Range input styling */
 input[type="range"] {
   height: 4px;
