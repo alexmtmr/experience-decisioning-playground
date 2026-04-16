@@ -39,6 +39,7 @@ export const Shell = ({ step, goToStep, industry, setIndustry, showIndustry, set
                       onMouseEnter={e => { if (industry !== key) e.currentTarget.style.background = T.sa; }}
                       onMouseLeave={e => { if (industry !== key) e.currentTarget.style.background = 'transparent'; }}>
                       <Icon size={12} color={industry === key ? T.ac : T.tm} />{label}
+                      {key !== 'retail' && <span style={{ fontStyle: 'italic', color: T.tm, fontSize: 10, marginLeft: 4, fontWeight: 400 }}>soon</span>}
                     </div>
                   ))}
                 </div>

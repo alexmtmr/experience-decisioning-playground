@@ -41,18 +41,28 @@ export default function App() {
   const CurrentStep = STEP_COMPONENTS[STEPS[step].id];
 
   return (
-    <Shell
-      step={step}
-      goToStep={goToStep}
-      industry={industry}
-      setIndustry={setIndustry}
-      showIndustry={showIndustry}
-      setShowIndustry={setShowIndustry}
-      contentRef={contentRef}
-    >
-      <div key={fadeKey} style={{ maxWidth: 1060, margin: '0 auto', padding: '28px 20px 70px', animation: 'fadeIn 0.3s' }}>
-        <CurrentStep />
+    <>
+      <Shell
+        step={step}
+        goToStep={goToStep}
+        industry={industry}
+        setIndustry={setIndustry}
+        showIndustry={showIndustry}
+        setShowIndustry={setShowIndustry}
+        contentRef={contentRef}
+      >
+        <div key={fadeKey} style={{ maxWidth: 1060, margin: '0 auto', padding: '28px 20px 70px', animation: 'fadeIn 0.3s' }}>
+          <CurrentStep />
+        </div>
+      </Shell>
+      <div style={{
+        position: 'fixed', bottom: 54, right: 14,
+        fontFamily: 'var(--font-sans)', fontSize: 9, color: '#5A554F',
+        opacity: 0.5, pointerEvents: 'none', zIndex: 9999,
+        letterSpacing: '0.02em',
+      }}>
+        Created by Alexander Mittermaier
       </div>
-    </Shell>
+    </>
   );
 }
